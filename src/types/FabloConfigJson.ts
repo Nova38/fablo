@@ -32,12 +32,25 @@ export interface PeerJson {
   anchorPeerInstances?: number;
 }
 
+export interface UserAttributes {
+  [key: string]: string;
+}
+
+export interface UserJson {
+  name: string;
+  affiliation: string;
+  attributes?: UserAttributes;
+  enrollSecret?: string;
+  enrollId?: string;
+}
+
 export interface OrgJson {
   organization: OrganizationDetailsJson;
   ca: CAJson;
   orderers: OrdererJson[] | undefined;
   peer?: PeerJson;
   tools?: { fabloRest?: boolean; explorer?: boolean };
+  users?: UserJson[];
 }
 
 export interface ChannelJson {

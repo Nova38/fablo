@@ -117,6 +117,15 @@ export interface ExplorerConfig {
   port: number;
 }
 
+export interface UserAttributes {
+  [key: string]: string;
+}
+export interface User {
+  name: string;
+  attributes?: UserAttributes;
+  enrollSecret?: string;
+  enrollId?: string;
+}
 export interface OrgConfig {
   anchorPeers: PeerConfig[];
   bootstrapPeers: string;
